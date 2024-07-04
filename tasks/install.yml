@@ -28,6 +28,7 @@
     owner: "{{ influxdb_uid }}"
     group: "{{ influxdb_gid }}"
     mode: 0640
+  when: influxdb_container_labels_traefik_enabled
 
 - name: Ensure influxdb configuration is deployed
   ansible.builtin.template:
