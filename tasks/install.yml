@@ -27,7 +27,7 @@
     dest: "{{ influxdb_config_path }}/labels"
     owner: "{{ influxdb_uid }}"
     group: "{{ influxdb_gid }}"
-    mode: 0640
+    mode: 0644
   when: influxdb_container_labels_traefik_enabled
 
 - name: Ensure influxdb configuration is deployed
@@ -36,12 +36,13 @@
     dest: "{{ influxdb_config_path }}/env"
     owner: "{{ influxdb_uid }}"
     group: "{{ influxdb_gid }}"
-    mode: 0640
+    mode: 0644
 
 - name: Ensure influxdb network is created in Docker
   community.docker.docker_network:
     name: "{{ influxdb_container_network }}"
     driver: bridge
+    driver_options: "{{ devture_systemd_docker_base_container_networks_driver_options }}"
 
 - name: Ensure influxdb container image is pulled
   community.docker.docker_image:
