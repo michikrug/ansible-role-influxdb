@@ -15,6 +15,7 @@ influxdb_enabled: true
 influxdb_identifier: influxdb
 influxdb_base_path: "/{{ influxdb_identifier }}"
 influxdb_data_path: "{{ influxdb_base_path }}/data"
+influxdb_backup_path: "{{ influxdb_base_path }}/backup"
 
 # renovate: datasource=docker depName=library/influxdb versioning=semver
 influxdb_version: 2.8.0
