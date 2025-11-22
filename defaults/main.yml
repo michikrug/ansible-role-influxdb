@@ -59,7 +59,7 @@ influxdb_container_additional_networks_custom: []
 # See `../templates/labels.j2` for details.
 #
 # To inject your own other container labels, see `influxdb_container_labels_additional_labels_custom`.
-influxdb_container_labels_traefik_enabled: true
+influxdb_container_labels_traefik_enabled: false
 influxdb_container_labels_traefik_docker_network: "{{ influxdb_container_network }}"
 influxdb_container_labels_traefik_hostname: "{{ influxdb_hostname }}"
 # The path prefix must either be `/` or not end with a slash (e.g. `/influxdb`).
